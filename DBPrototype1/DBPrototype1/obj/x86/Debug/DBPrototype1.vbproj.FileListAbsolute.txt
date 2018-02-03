@@ -1,0 +1,4 @@
+C:\Users\User\documents\visual studio 2010\Projects\DBPrototype1\DBPrototype1\obj\x86\Debug\DBPrototype.Form1.resources
+C:\Users\User\documents\visual studio 2010\Projects\DBPrototype1\DBPrototype1\obj\x86\Debug\DBPrototype.Resources.resources
+C:\Users\User\documents\visual studio 2010\Projects\DBPrototype1\DBPrototype1\obj\x86\Debug\DBPrototype.Register.resources
+C:\Users\User\documents\visual studio 2010\Projects\DBPrototype1\DBPrototype1\obj\x86\Debug\DBPrototype1.vbproj.GenerateResource.Cache
