@@ -11,7 +11,6 @@ Public Class Utils
         Dim datafile = "login form.accdb"
         Dim connectstring = provider & datafile ' telling the program wich file to look in
         Dim myconnection = New OleDbConnection
-        MsgBox("this is only a test")
         myconnection.ConnectionString = connectstring ' establishing the connection string 
         myconnection.Open() ' open connection
 
