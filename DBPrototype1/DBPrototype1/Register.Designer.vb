@@ -28,7 +28,6 @@ Partial Class Register
         Me.Lastnametb = New System.Windows.Forms.TextBox()
         Me.UserNametb = New System.Windows.Forms.TextBox()
         Me.Passwordtb = New System.Windows.Forms.TextBox()
-        Me.Subject = New System.Windows.Forms.TextBox()
         Me.RePasstb = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -36,6 +35,7 @@ Partial Class Register
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Repassword = New System.Windows.Forms.Label()
+        Me.Subjectdrop = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Button1
@@ -83,13 +83,6 @@ Partial Class Register
         Me.Passwordtb.Name = "Passwordtb"
         Me.Passwordtb.Size = New System.Drawing.Size(100, 20)
         Me.Passwordtb.TabIndex = 5
-        '
-        'Subject
-        '
-        Me.Subject.Location = New System.Drawing.Point(133, 194)
-        Me.Subject.Name = "Subject"
-        Me.Subject.Size = New System.Drawing.Size(100, 20)
-        Me.Subject.TabIndex = 6
         '
         'RePasstb
         '
@@ -152,11 +145,21 @@ Partial Class Register
         Me.Repassword.TabIndex = 13
         Me.Repassword.Text = "Repassword"
         '
+        'Subjectdrop
+        '
+        Me.Subjectdrop.FormattingEnabled = True
+        Me.Subjectdrop.Items.AddRange(New Object() {"Maths", "Science", "English"})
+        Me.Subjectdrop.Location = New System.Drawing.Point(133, 194)
+        Me.Subjectdrop.Name = "Subjectdrop"
+        Me.Subjectdrop.Size = New System.Drawing.Size(121, 21)
+        Me.Subjectdrop.TabIndex = 14
+        '
         'Register
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(561, 281)
+        Me.Controls.Add(Me.Subjectdrop)
         Me.Controls.Add(Me.Repassword)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -164,7 +167,6 @@ Partial Class Register
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.RePasstb)
-        Me.Controls.Add(Me.Subject)
         Me.Controls.Add(Me.Passwordtb)
         Me.Controls.Add(Me.UserNametb)
         Me.Controls.Add(Me.Lastnametb)
@@ -183,7 +185,6 @@ Partial Class Register
     Friend WithEvents Lastnametb As System.Windows.Forms.TextBox
     Friend WithEvents UserNametb As System.Windows.Forms.TextBox
     Friend WithEvents Passwordtb As System.Windows.Forms.TextBox
-    Friend WithEvents Subject As System.Windows.Forms.TextBox
     Friend WithEvents RePasstb As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -191,4 +192,5 @@ Partial Class Register
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Repassword As System.Windows.Forms.Label
+    Friend WithEvents Subjectdrop As System.Windows.Forms.ComboBox
 End Class

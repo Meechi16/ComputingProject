@@ -1,4 +1,5 @@
-﻿Imports System.Drawing
+﻿
+Imports System.Drawing
 Public Class SeatingPlan
     Dim G As Graphics
     Dim r As Rectangle
