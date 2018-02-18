@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     Dim utils As Utils
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles LoginButton.Click
         utils = New Utils()
         Dim hash = utils.getHash(Password.Text)
         Dim results = utils.QueryDatabase("Select User From Login Where User = '" & username.Text & "' AND password = '" & hash.ToString & "' ")
@@ -13,12 +13,14 @@
         End If
     End Sub
 
-    Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    
 
+    Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles RegisterButton.Click
+        Register.Show()
+        Me.Close()
     End Sub
 
-    Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
-        Register.Show()
-
+    Private Sub CancelButtons_Click(sender As System.Object, e As System.EventArgs) Handles CancelButtons.Click
+        Me.Close()
     End Sub
 End Class

@@ -22,41 +22,42 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.LoginButton = New System.Windows.Forms.Button()
+        Me.CancelButtons = New System.Windows.Forms.Button()
+        Me.RegisterButton = New System.Windows.Forms.Button()
         Me.username = New System.Windows.Forms.TextBox()
         Me.Password = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'LoginButton
         '
-        Me.Button1.Location = New System.Drawing.Point(22, 237)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.LoginButton.Location = New System.Drawing.Point(22, 237)
+        Me.LoginButton.Name = "LoginButton"
+        Me.LoginButton.Size = New System.Drawing.Size(75, 23)
+        Me.LoginButton.TabIndex = 0
+        Me.LoginButton.Text = "Login"
+        Me.LoginButton.UseVisualStyleBackColor = True
         '
-        'Button2
+        'CancelButtons
         '
-        Me.Button2.Location = New System.Drawing.Point(146, 237)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.CancelButtons.Location = New System.Drawing.Point(146, 237)
+        Me.CancelButtons.Name = "CancelButtons"
+        Me.CancelButtons.Size = New System.Drawing.Size(75, 23)
+        Me.CancelButtons.TabIndex = 2
+        Me.CancelButtons.Text = "Cancel"
+        Me.CancelButtons.UseVisualStyleBackColor = True
         '
-        'Button3
+        'RegisterButton
         '
-        Me.Button3.Location = New System.Drawing.Point(270, 237)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.RegisterButton.Location = New System.Drawing.Point(270, 237)
+        Me.RegisterButton.Name = "RegisterButton"
+        Me.RegisterButton.Size = New System.Drawing.Size(75, 23)
+        Me.RegisterButton.TabIndex = 3
+        Me.RegisterButton.Text = "Sign up"
+        Me.RegisterButton.UseVisualStyleBackColor = True
         '
         'username
         '
@@ -90,30 +91,41 @@ Partial Class Form1
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Password"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(153, 23)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(36, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Login "
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(376, 297)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Password)
         Me.Controls.Add(Me.username)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.RegisterButton)
+        Me.Controls.Add(Me.CancelButtons)
+        Me.Controls.Add(Me.LoginButton)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents LoginButton As System.Windows.Forms.Button
+    Friend WithEvents CancelButtons As System.Windows.Forms.Button
+    Friend WithEvents RegisterButton As System.Windows.Forms.Button
     Friend WithEvents username As System.Windows.Forms.TextBox
     Friend WithEvents Password As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 
 End Class

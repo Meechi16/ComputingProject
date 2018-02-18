@@ -22,40 +22,40 @@ Partial Class SeatingPlan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.AddTable = New System.Windows.Forms.Button()
+        Me.RemoveTable = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Button1
+        'AddTable
         '
-        Me.Button1.Location = New System.Drawing.Point(424, 62)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.AddTable.Location = New System.Drawing.Point(461, 61)
+        Me.AddTable.Name = "AddTable"
+        Me.AddTable.Size = New System.Drawing.Size(75, 23)
+        Me.AddTable.TabIndex = 0
+        Me.AddTable.Text = "Add"
+        Me.AddTable.UseVisualStyleBackColor = True
         '
-        'Button2
+        'RemoveTable
         '
-        Me.Button2.Location = New System.Drawing.Point(424, 181)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.RemoveTable.Location = New System.Drawing.Point(461, 168)
+        Me.RemoveTable.Name = "RemoveTable"
+        Me.RemoveTable.Size = New System.Drawing.Size(75, 23)
+        Me.RemoveTable.TabIndex = 1
+        Me.RemoveTable.Text = "Remove"
+        Me.RemoveTable.UseVisualStyleBackColor = True
         '
         'SeatingPlan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(536, 345)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.RemoveTable)
+        Me.Controls.Add(Me.AddTable)
         Me.Name = "SeatingPlan"
         Me.Text = "SeatingPlan"
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents AddTable As System.Windows.Forms.Button
+    Friend WithEvents RemoveTable As System.Windows.Forms.Button
 End Class

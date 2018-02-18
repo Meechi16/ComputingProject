@@ -11,20 +11,32 @@ Public Class SeatingPlan
 
 
     Private Sub Seat_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        For x = 0 To 4
-            For y = 0 To 5
-
-                For i = 0 To 10
-                    tables.Add(New Table("Amechi", "Bob", i * 120, i * 60)) ' spreads the squares out so they dont overlap 
-                Next
-            Next
-        Next
+        Dim classID As String = "Eng12"
+        setSeats(classID)
         lastTableClickedOn = tables(0)
         G = Me.CreateGraphics
         BB = New Bitmap(480, 480) 'sets the pixels for the shape 
         gameloop()
 
+    End Sub
+
+    Private Sub setSeats(ByRef classID As String)
+        Dim utils As Utils = New Utils
+
+        Dim results_dictionary = utils.QueryDatabase("SELECT Firstname, LastName FROM TakenClass INNER JOIN StudentInfo ON TakenClass.StudentID = StudentInfo.StudentID WHERE TakenClass.ClassID = '" & classID & "'")
+        Dim count As Integer = 0
+        For x = 0 To 4
+            For y = 0 To 5
+                If count < results_dictionary.Count Then
+                    tables.Add(New Table(results_dictionary(count).Item("Firstname"), y * 120, x * 60)) ' spreads the squares out so they dont overlap
+
+                    count += 1
+
+                Else
+                    tables.Add(New Table("", y * 120, x * 60))
+                End If
+            Next
+        Next
     End Sub
 
     Private Sub gameloop()
@@ -46,11 +58,7 @@ Public Class SeatingPlan
             Dim rectangle As Rectangle ' draw the shape 
             rectangle = New Rectangle(Table.getCoord.X, Table.getCoord.Y, Table.getWidth(), Table.getHeight()) ' sets properties of this shape 
             G.FillRectangle(Brushes.Black, rectangle)
-
-
-            'AddHandler picture.MouseDown, AddressOf pictureMouseDown ' connects the shape to the movents of your mouse 
-            'AddHandler picture.MouseMove, AddressOf picturemousemove
-            'AddHandler picture.MouseUp, AddressOf picturemouseup
+            G.DrawString(Table.getName(), SystemFonts.DefaultFont, Brushes.White, Table.getCoord)
         Next
 
     End Sub
@@ -92,9 +100,9 @@ Public Class SeatingPlan
         table.setCoord(reletiveMousePos)
     End Sub
 
-    Sub picturemouseup(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
-
-
+   
+    Private Sub RemoveTable_Click(sender As System.Object, e As System.EventArgs) Handles RemoveTable.MouseClick
+        tables.Remove(lastTableClickedOn)
     End Sub
 End Class
 

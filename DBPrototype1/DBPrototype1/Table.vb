@@ -6,12 +6,12 @@ Public Class Table
     Dim width As Integer
     Dim height As Integer
 
-    Public Sub New(ByVal s1 As String, ByVal s2 As String, ByRef xCoord As Integer, ByVal yCoord As Integer)
+    Public Sub New(ByVal s1 As String, ByRef xCoord As Integer, ByVal yCoord As Integer)
         Me.width = 80
         Me.height = 40
         Me.coordinate = New Point(xCoord, yCoord)
         Me.student1 = s1
-        Me.student2 = s2
+
     End Sub
 
     Public Function getCoord() As Point
@@ -28,5 +28,9 @@ Public Class Table
 
     Public Function getHeight() As Integer
         Return Me.height
+    End Function
+
+    Public Function getName() As String
+        Return Me.student1
     End Function
 End Class
