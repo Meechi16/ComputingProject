@@ -5,7 +5,7 @@ Public Class Register
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         Dim FirstName As String = Firstnametb.Text ' sets the firstname to the text box 
         Dim LastName As String = Lastnametb.Text   ' sets the lastname to the text box 
-        Dim Password As String = Passwordtb.Text   ' sets the password tot he password box 
+        Dim Password As String = Passwordtb.Text   ' sets the password to the password box 
         Dim usernameIsOk As Boolean = False         ' bool checks if usernames meets criteria 
         Dim PasswordIsOk As Boolean = False  ' checks if password meets critera 
         Dim username As String = UserNametb.Text
@@ -25,27 +25,27 @@ Public Class Register
             Return
 
         ElseIf Password.Length < 6 Then
-            MsgBox("Password not secure enough")
+            MsgBox("Password not secure enough") 'checks if the password is more than 6 characters 
             Return
 
         ElseIf Not caps.IsMatch(Password) Then
-            MsgBox("Please include a capital letter in your password")
+            MsgBox("Please include a capital letter in your password") ' includes a capital 
             Return
 
         ElseIf Not digits.IsMatch(Password) Then
-            MsgBox("Please include a digit in your password")
+            MsgBox("Please include a digit in your password") ' make user the code includes a digit 
             Return
 
         ElseIf RePassword = "" Or RePassword <> Password Then
-            MsgBox("Please re enter the password correctly")
+            MsgBox("Please re enter the password correctly")   ' checks if the repassword box is entered into with the same password 
             Return
 
-        Else : MsgBox("You have logged in sucessfully")
+        Else : MsgBox("You have logged in sucessfully") ' tells the user that their data has been entered correctly 
             Me.Close()
         End If
 
         Dim hashedPassword = util.getHash(Password)  ' if this is all correct then the password is hashed 
-        util.AddToLoginTable(username, hashedPassword, FirstName, LastName, Subjectdrop.SelectedItem)
+        util.AddToLoginTable(username, hashedPassword, FirstName, LastName, Subjectdrop.SelectedItem) ' adds the data into the login table 
 
 
     End Sub

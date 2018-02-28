@@ -1,5 +1,8 @@
 ﻿
 Imports System.Drawing
+Imports System.Xml
+Imports System.IO
+
 Public Class SeatingPlan
     Dim G As Graphics
     Dim r As Rectangle

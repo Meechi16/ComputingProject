@@ -5,7 +5,7 @@
         Dim hash = utils.getHash(Password.Text)
         Dim results = utils.QueryDatabase("Select User From Login Where User = '" & username.Text & "' AND password = '" & hash.ToString & "' ")
         If results.Count > 0 Then
-            SeatingPlan.Show()
+            Subjectlist.Show()
         Else
             MsgBox("Username or Password incorrect")
             username.Clear()
@@ -17,7 +17,7 @@
 
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles RegisterButton.Click
         Register.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub CancelButtons_Click(sender As System.Object, e As System.EventArgs) Handles CancelButtons.Click

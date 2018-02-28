@@ -106,6 +106,12 @@
     <Compile Include="SeatingPlan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Subjectlist.Designer.vb">
+      <DependentUpon>Subjectlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Subjectlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Table.vb" />
     <Compile Include="Utils.vb" />
   </ItemGroup>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SeatingPlan.resx">
       <DependentUpon>SeatingPlan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subjectlist.resx">
+      <DependentUpon>Subjectlist.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
