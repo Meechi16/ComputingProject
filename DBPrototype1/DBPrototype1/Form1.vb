@@ -5,6 +5,7 @@
         Dim hash = utils.getHash(Password.Text)
         Dim results = utils.QueryDatabase("Select User From Login Where User = '" & username.Text & "' AND password = '" & hash.ToString & "' ")
         If results.Count > 0 Then
+            Subjectlist.PassUserName(username.Text)
             Subjectlist.Show()
         Else
             MsgBox("Username or Password incorrect")
