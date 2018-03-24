@@ -45,4 +45,9 @@ Public Class Subjectlist
         Dim result = Utils.QueryDatabase("SELECT TeacherID FROM Login WHERE User='" & Username & "'")
         result(0).TryGetValue("TeacherID", TeacherID)
     End Sub
+
+    Private Sub SeatingButt_Click(sender As System.Object, e As System.EventArgs) Handles SeatingButt.Click
+        SeatingPlan.SetTeacherID(TeacherID)
+        SeatingPlan.Show()
+    End Sub
 End Class

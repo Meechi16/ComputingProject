@@ -30,8 +30,6 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Subjectdrop = New System.Windows.Forms.ComboBox()
-        Me.Subject = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'LoginButton
@@ -70,7 +68,7 @@ Partial Class Form1
         '
         'Password
         '
-        Me.Password.Location = New System.Drawing.Point(121, 112)
+        Me.Password.Location = New System.Drawing.Point(121, 138)
         Me.Password.Name = "Password"
         Me.Password.Size = New System.Drawing.Size(100, 20)
         Me.Password.TabIndex = 5
@@ -87,7 +85,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(58, 119)
+        Me.Label2.Location = New System.Drawing.Point(58, 141)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 13)
         Me.Label2.TabIndex = 7
@@ -102,31 +100,11 @@ Partial Class Form1
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Login "
         '
-        'Subjectdrop
-        '
-        Me.Subjectdrop.FormattingEnabled = True
-        Me.Subjectdrop.Items.AddRange(New Object() {"Maths", "English", "Science"})
-        Me.Subjectdrop.Location = New System.Drawing.Point(121, 167)
-        Me.Subjectdrop.Name = "Subjectdrop"
-        Me.Subjectdrop.Size = New System.Drawing.Size(100, 21)
-        Me.Subjectdrop.TabIndex = 9
-        '
-        'Subject
-        '
-        Me.Subject.AutoSize = True
-        Me.Subject.Location = New System.Drawing.Point(30, 175)
-        Me.Subject.Name = "Subject"
-        Me.Subject.Size = New System.Drawing.Size(83, 13)
-        Me.Subject.TabIndex = 10
-        Me.Subject.Text = "TeacherSubject"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(376, 297)
-        Me.Controls.Add(Me.Subject)
-        Me.Controls.Add(Me.Subjectdrop)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -149,7 +127,5 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Subjectdrop As System.Windows.Forms.ComboBox
-    Friend WithEvents Subject As System.Windows.Forms.Label
 
 End Class

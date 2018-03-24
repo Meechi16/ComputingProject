@@ -11,11 +11,20 @@ Public Class SeatingPlan
     Dim isRunning As Boolean = True
     Dim tables As New List(Of Table)
     Dim lastTableClickedOn As Table
+    Dim Utils As New Utils
+    Dim TeacherID As String
+    Dim ClassID As String
 
+    Public Sub SetTeacherID(ByVal tid As String)
+        TeacherID = tid
+    End Sub
 
     Private Sub Seat_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim classID As String = "Eng12"
-        setSeats(classID)
+        Dim getClassQuery As String = "SELECT ClassID FROM Classes WHERE Teacher = '" & TeacherID & "'"
+        Dim result = Utils.QueryDatabase(getClassQuery)
+        ClassID = ""
+        result(0).TryGetValue("ClassID", ClassID)
+        setSeats(ClassID)
         lastTableClickedOn = tables(0)
         G = Me.CreateGraphics
         BB = New Bitmap(480, 480) 'sets the pixels for the shape 
@@ -28,15 +37,15 @@ Public Class SeatingPlan
 
         Dim results_dictionary = utils.QueryDatabase("SELECT Firstname, LastName FROM TakenClass INNER JOIN StudentInfo ON TakenClass.StudentID = StudentInfo.StudentID WHERE TakenClass.ClassID = '" & classID & "'")
         Dim count As Integer = 0
-        For x = 0 To 4
-            For y = 0 To 5
+        For y = 0 To 4
+            For x = 0 To 3
                 If count < results_dictionary.Count Then
-                    tables.Add(New Table(results_dictionary(count).Item("Firstname"), y * 120, x * 60)) ' spreads the squares out so they dont overlap
+                    tables.Add(New Table(results_dictionary(count).Item("Firstname"), x * 120, y * 60)) ' spreads the squares out so they dont overlap
 
                     count += 1
 
                 Else
-                    tables.Add(New Table("", y * 120, x * 60))
+                    tables.Add(New Table("", x * 120, y * 60))
                 End If
             Next
         Next
@@ -103,9 +112,16 @@ Public Class SeatingPlan
         table.setCoord(reletiveMousePos)
     End Sub
 
-   
+
     Private Sub RemoveTable_Click(sender As System.Object, e As System.EventArgs) Handles RemoveTable.MouseClick
         tables.Remove(lastTableClickedOn)
+    End Sub
+
+    Private Sub SaveButton_Click(sender As System.Object, e As System.EventArgs) Handles SaveButton.Click
+        Dim serializer As New Xml.Serialization.XmlSerializer(tables.GetType)
+        Dim filename = ClassID & ".xml"
+        Dim file As New FileStream(filename, FileMode.OpenOrCreate)
+        serializer.Serialize(file, tables)
     End Sub
 End Class
 

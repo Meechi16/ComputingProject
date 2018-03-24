@@ -14,3 +14,4 @@ C:\Users\User\Documents\ComputingProject\ComputingProject\DBPrototype1\DBPrototy
 C:\Users\User\Documents\ComputingProject\ComputingProject\DBPrototype1\DBPrototype1\obj\x86\Debug\DBPrototype1.xml
 C:\Users\User\Documents\ComputingProject\ComputingProject\DBPrototype1\DBPrototype1\obj\x86\Debug\DBPrototype1.pdb
 C:\Users\User\Documents\ComputingProject\ComputingProject\DBPrototype1\DBPrototype1\obj\x86\Debug\DBPrototype.Subjectlist.resources
+C:\Users\User\Documents\ComputingProject\ComputingProject\DBPrototype1\DBPrototype1\obj\x86\Debug\DBPrototype.TeacherSets.resources

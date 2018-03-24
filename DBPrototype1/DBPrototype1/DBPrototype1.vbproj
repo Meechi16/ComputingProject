@@ -106,6 +106,12 @@
     <Compile Include="SeatingPlan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Sets.Designer.vb">
+      <DependentUpon>Sets.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sets.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Subjectlist.Designer.vb">
       <DependentUpon>Subjectlist.vb</DependentUpon>
     </Compile>
@@ -113,6 +119,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Table.vb" />
+    <Compile Include="TeacherSets.Designer.vb">
+      <DependentUpon>TeacherSets.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherSets.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Utils.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Subjectlist.resx">
       <DependentUpon>Subjectlist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherSets.resx">
+      <DependentUpon>TeacherSets.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

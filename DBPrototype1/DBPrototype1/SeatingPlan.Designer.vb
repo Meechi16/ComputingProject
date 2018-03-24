@@ -24,6 +24,7 @@ Partial Class SeatingPlan
     Private Sub InitializeComponent()
         Me.AddTable = New System.Windows.Forms.Button()
         Me.RemoveTable = New System.Windows.Forms.Button()
+        Me.SaveButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'AddTable
@@ -44,11 +45,21 @@ Partial Class SeatingPlan
         Me.RemoveTable.Text = "Remove"
         Me.RemoveTable.UseVisualStyleBackColor = True
         '
+        'SaveButton
+        '
+        Me.SaveButton.Location = New System.Drawing.Point(461, 254)
+        Me.SaveButton.Name = "SaveButton"
+        Me.SaveButton.Size = New System.Drawing.Size(75, 23)
+        Me.SaveButton.TabIndex = 2
+        Me.SaveButton.Text = "Save"
+        Me.SaveButton.UseVisualStyleBackColor = True
+        '
         'SeatingPlan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(536, 345)
+        Me.Controls.Add(Me.SaveButton)
         Me.Controls.Add(Me.RemoveTable)
         Me.Controls.Add(Me.AddTable)
         Me.Name = "SeatingPlan"
@@ -58,4 +69,5 @@ Partial Class SeatingPlan
     End Sub
     Friend WithEvents AddTable As System.Windows.Forms.Button
     Friend WithEvents RemoveTable As System.Windows.Forms.Button
+    Friend WithEvents SaveButton As System.Windows.Forms.Button
 End Class

@@ -42,7 +42,7 @@ Partial Class Subjectlist
         '
         'LoadTable
         '
-        Me.LoadTable.Location = New System.Drawing.Point(182, 281)
+        Me.LoadTable.Location = New System.Drawing.Point(120, 279)
         Me.LoadTable.Name = "LoadTable"
         Me.LoadTable.Size = New System.Drawing.Size(75, 23)
         Me.LoadTable.TabIndex = 1
@@ -51,7 +51,7 @@ Partial Class Subjectlist
         '
         'SeatingButt
         '
-        Me.SeatingButt.Location = New System.Drawing.Point(328, 281)
+        Me.SeatingButt.Location = New System.Drawing.Point(211, 279)
         Me.SeatingButt.Name = "SeatingButt"
         Me.SeatingButt.Size = New System.Drawing.Size(75, 23)
         Me.SeatingButt.TabIndex = 2
@@ -69,7 +69,7 @@ Partial Class Subjectlist
         '
         'DeleteButt
         '
-        Me.DeleteButt.Location = New System.Drawing.Point(39, 250)
+        Me.DeleteButt.Location = New System.Drawing.Point(84, 252)
         Me.DeleteButt.Name = "DeleteButt"
         Me.DeleteButt.Size = New System.Drawing.Size(75, 23)
         Me.DeleteButt.TabIndex = 4
@@ -78,7 +78,7 @@ Partial Class Subjectlist
         '
         'UpdateButt
         '
-        Me.UpdateButt.Location = New System.Drawing.Point(182, 250)
+        Me.UpdateButt.Location = New System.Drawing.Point(239, 250)
         Me.UpdateButt.Name = "UpdateButt"
         Me.UpdateButt.Size = New System.Drawing.Size(75, 23)
         Me.UpdateButt.TabIndex = 5
@@ -87,7 +87,7 @@ Partial Class Subjectlist
         '
         'EditButt
         '
-        Me.EditButt.Location = New System.Drawing.Point(328, 250)
+        Me.EditButt.Location = New System.Drawing.Point(297, 279)
         Me.EditButt.Name = "EditButt"
         Me.EditButt.Size = New System.Drawing.Size(75, 23)
         Me.EditButt.TabIndex = 6
