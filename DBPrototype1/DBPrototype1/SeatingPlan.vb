@@ -24,7 +24,16 @@ Public Class SeatingPlan
         Dim result = Utils.QueryDatabase(getClassQuery)
         ClassID = ""
         result(0).TryGetValue("ClassID", ClassID)
-        setSeats(ClassID)
+
+        If File.Exists(ClassID & ".xml") Then
+            Dim serializer As New Xml.Serialization.XmlSerializer(tables.GetType)
+            Dim file As New FileStream(ClassID & ".xml", FileMode.Open)
+            tables = serializer.Deserialize(file)
+            file.Close()
+        Else
+            setSeats(ClassID)
+        End If
+
         lastTableClickedOn = tables(0)
         G = Me.CreateGraphics
         BB = New Bitmap(480, 480) 'sets the pixels for the shape 
@@ -122,6 +131,17 @@ Public Class SeatingPlan
         Dim filename = ClassID & ".xml"
         Dim file As New FileStream(filename, FileMode.OpenOrCreate)
         serializer.Serialize(file, tables)
+        file.Close()
+    End Sub
+
+    Private Sub AddTable_Click(sender As System.Object, e As System.EventArgs) Handles AddTable.MouseClick
+        tables.Add(New Table("", 0, 0))
+    End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles BackButtSP.Click
+        Subjectlist.Show()
+        Me.Hide()
+
     End Sub
 End Class
 

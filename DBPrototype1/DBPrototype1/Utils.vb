@@ -42,7 +42,7 @@ Public Class Utils
         myconnection.ConnectionString = connectstring ' establishing the connection string 
         myconnection.Open() ' open connection
 
-        Dim command = "INSERT INTO Login ([User], [Password], [Firstname], [Surname], [Subject]) Values ("
+        Dim command = "INSERT INTO Login ([User], [Password], [Firstname], [Surname], [Subject], [TeacherID]) Values ("
         For Each value In values
             command = command & "'" & value & "', "
         Next
@@ -71,5 +71,14 @@ Public Class Utils
         Return hashedString ' returns the password to the database 
 
     End Function
-
+    Function CreateTeacherId()
+        Dim s As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        Dim r As New Random
+        Dim TeacherId As New StringBuilder
+        For i As Integer = 1 To 3
+            Dim idx As Integer = r.Next(0, 35)
+            TeacherId.Append(s.Substring(idx, 1))
+        Next
+        Return TeacherId.ToString()
+    End Function
 End Class

@@ -39,4 +39,12 @@ Public Class Table
     Public Function getName() As String
         Return Me.student1
     End Function
+    Public Function addtables()
+        Me.width = 80
+        Me.height = 40
+        Me.coordinate = New Point(0, 0)
+        Me.student1 = ""
+        Return width & height & student1
+    End Function
+
 End Class

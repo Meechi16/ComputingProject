@@ -25,11 +25,12 @@ Partial Class SeatingPlan
         Me.AddTable = New System.Windows.Forms.Button()
         Me.RemoveTable = New System.Windows.Forms.Button()
         Me.SaveButton = New System.Windows.Forms.Button()
+        Me.BackButtSP = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'AddTable
         '
-        Me.AddTable.Location = New System.Drawing.Point(461, 61)
+        Me.AddTable.Location = New System.Drawing.Point(498, 49)
         Me.AddTable.Name = "AddTable"
         Me.AddTable.Size = New System.Drawing.Size(75, 23)
         Me.AddTable.TabIndex = 0
@@ -38,7 +39,7 @@ Partial Class SeatingPlan
         '
         'RemoveTable
         '
-        Me.RemoveTable.Location = New System.Drawing.Point(461, 168)
+        Me.RemoveTable.Location = New System.Drawing.Point(498, 100)
         Me.RemoveTable.Name = "RemoveTable"
         Me.RemoveTable.Size = New System.Drawing.Size(75, 23)
         Me.RemoveTable.TabIndex = 1
@@ -47,18 +48,28 @@ Partial Class SeatingPlan
         '
         'SaveButton
         '
-        Me.SaveButton.Location = New System.Drawing.Point(461, 254)
+        Me.SaveButton.Location = New System.Drawing.Point(498, 154)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(75, 23)
         Me.SaveButton.TabIndex = 2
         Me.SaveButton.Text = "Save"
         Me.SaveButton.UseVisualStyleBackColor = True
         '
+        'BackButtSP
+        '
+        Me.BackButtSP.Location = New System.Drawing.Point(498, 204)
+        Me.BackButtSP.Name = "BackButtSP"
+        Me.BackButtSP.Size = New System.Drawing.Size(75, 23)
+        Me.BackButtSP.TabIndex = 3
+        Me.BackButtSP.Text = "back"
+        Me.BackButtSP.UseVisualStyleBackColor = True
+        '
         'SeatingPlan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(536, 345)
+        Me.ClientSize = New System.Drawing.Size(585, 345)
+        Me.Controls.Add(Me.BackButtSP)
         Me.Controls.Add(Me.SaveButton)
         Me.Controls.Add(Me.RemoveTable)
         Me.Controls.Add(Me.AddTable)
@@ -70,4 +81,5 @@ Partial Class SeatingPlan
     Friend WithEvents AddTable As System.Windows.Forms.Button
     Friend WithEvents RemoveTable As System.Windows.Forms.Button
     Friend WithEvents SaveButton As System.Windows.Forms.Button
+    Friend WithEvents BackButtSP As System.Windows.Forms.Button
 End Class

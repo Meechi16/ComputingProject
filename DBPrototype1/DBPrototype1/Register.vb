@@ -43,9 +43,9 @@ Public Class Register
         Else : MsgBox("You have logged in sucessfully") ' tells the user that their data has been entered correctly 
             Me.Close()
         End If
-
+        Dim TeachersId = util.CreateTeacherId
         Dim hashedPassword = util.getHash(Password)  ' if this is all correct then the password is hashed 
-        util.AddToLoginTable(username, hashedPassword, FirstName, LastName, Subjectdrop.SelectedItem) ' adds the data into the login table 
+        util.AddToLoginTable(username, hashedPassword, FirstName, LastName, Subjectdrop.SelectedItem, TeachersId) ' adds the data into the login table 
 
 
     End Sub

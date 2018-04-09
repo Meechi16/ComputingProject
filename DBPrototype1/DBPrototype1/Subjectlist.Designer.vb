@@ -22,23 +22,14 @@ Partial Class Subjectlist
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.NamesofStudents = New System.Windows.Forms.DataGridView()
         Me.LoadTable = New System.Windows.Forms.Button()
         Me.SeatingButt = New System.Windows.Forms.Button()
         Me.Addbutt = New System.Windows.Forms.Button()
         Me.DeleteButt = New System.Windows.Forms.Button()
         Me.UpdateButt = New System.Windows.Forms.Button()
         Me.EditButt = New System.Windows.Forms.Button()
-        CType(Me.NamesofStudents, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ClassTables = New System.Windows.Forms.TabControl()
         Me.SuspendLayout()
-        '
-        'NamesofStudents
-        '
-        Me.NamesofStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.NamesofStudents.Location = New System.Drawing.Point(39, 12)
-        Me.NamesofStudents.Name = "NamesofStudents"
-        Me.NamesofStudents.Size = New System.Drawing.Size(401, 232)
-        Me.NamesofStudents.TabIndex = 0
         '
         'LoadTable
         '
@@ -94,29 +85,36 @@ Partial Class Subjectlist
         Me.EditButt.Text = "Edit"
         Me.EditButt.UseVisualStyleBackColor = True
         '
+        'ClassTables
+        '
+        Me.ClassTables.Location = New System.Drawing.Point(29, 12)
+        Me.ClassTables.Name = "ClassTables"
+        Me.ClassTables.SelectedIndex = 0
+        Me.ClassTables.Size = New System.Drawing.Size(411, 216)
+        Me.ClassTables.TabIndex = 7
+        '
         'Subjectlist
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(482, 316)
+        Me.Controls.Add(Me.ClassTables)
         Me.Controls.Add(Me.EditButt)
         Me.Controls.Add(Me.UpdateButt)
         Me.Controls.Add(Me.DeleteButt)
         Me.Controls.Add(Me.Addbutt)
         Me.Controls.Add(Me.SeatingButt)
         Me.Controls.Add(Me.LoadTable)
-        Me.Controls.Add(Me.NamesofStudents)
         Me.Name = "Subjectlist"
         Me.Text = "Subjectlist"
-        CType(Me.NamesofStudents, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents NamesofStudents As System.Windows.Forms.DataGridView
     Friend WithEvents LoadTable As System.Windows.Forms.Button
     Friend WithEvents SeatingButt As System.Windows.Forms.Button
     Friend WithEvents Addbutt As System.Windows.Forms.Button
     Friend WithEvents DeleteButt As System.Windows.Forms.Button
     Friend WithEvents UpdateButt As System.Windows.Forms.Button
     Friend WithEvents EditButt As System.Windows.Forms.Button
+    Friend WithEvents ClassTables As System.Windows.Forms.TabControl
 End Class
