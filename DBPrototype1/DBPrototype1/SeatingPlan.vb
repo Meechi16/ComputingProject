@@ -15,15 +15,11 @@ Public Class SeatingPlan
     Dim TeacherID As String
     Dim ClassID As String
 
-    Public Sub SetTeacherID(ByVal tid As String)
-        TeacherID = tid
+    Public Sub SetClassID(ByVal cid As String)
+        ClassID = cid
     End Sub
 
     Private Sub Seat_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim getClassQuery As String = "SELECT ClassID FROM Classes WHERE Teacher = '" & TeacherID & "'"
-        Dim result = Utils.QueryDatabase(getClassQuery)
-        ClassID = ""
-        result(0).TryGetValue("ClassID", ClassID)
 
         If File.Exists(ClassID & ".xml") Then
             Dim serializer As New Xml.Serialization.XmlSerializer(tables.GetType)
@@ -31,7 +27,7 @@ Public Class SeatingPlan
             tables = serializer.Deserialize(file)
             file.Close()
         Else
-            setSeats(ClassID)
+            setSeats()
         End If
 
         lastTableClickedOn = tables(0)
@@ -41,10 +37,10 @@ Public Class SeatingPlan
 
     End Sub
 
-    Private Sub setSeats(ByRef classID As String)
+    Private Sub setSeats()
         Dim utils As Utils = New Utils
 
-        Dim results_dictionary = utils.QueryDatabase("SELECT Firstname, LastName FROM TakenClass INNER JOIN StudentInfo ON TakenClass.StudentID = StudentInfo.StudentID WHERE TakenClass.ClassID = '" & classID & "'")
+        Dim results_dictionary = utils.QueryDatabase("SELECT Firstname, LastName FROM TakenClass INNER JOIN StudentInfo ON TakenClass.StudentID = StudentInfo.StudentID WHERE TakenClass.ClassID = '" & ClassID & "'")
         Dim count As Integer = 0
         For y = 0 To 4
             For x = 0 To 3
@@ -63,10 +59,12 @@ Public Class SeatingPlan
     Private Sub gameloop()
         Do While isRunning = True ' loops throught the board 
             Application.DoEvents()
-            drawgraphics()
+            If isRunning Then
+                drawgraphics()
+            End If
         Loop
     End Sub
-    Private Sub drawgraphics() ' draws grid 
+    Private Sub drawgraphics() ' draws grid
         BBG = Me.CreateGraphics
         BBG.DrawImage(BB, 0, 0, 480, 480)
         G.Clear(Color.Blue) ' sets sections of the for that dont have grid on it to blue 
@@ -140,8 +138,15 @@ Public Class SeatingPlan
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles BackButtSP.Click
         Subjectlist.Show()
-        Me.Hide()
+        Me.Close()
+    End Sub
 
+    Private Sub frmProgramma_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        isRunning = False
+        'If MessageBox.Show("Are you sur to close this applicati?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        'Else
+        '    e.Cancel = True
+        'End If
     End Sub
 End Class
 

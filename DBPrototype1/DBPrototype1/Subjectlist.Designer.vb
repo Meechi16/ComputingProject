@@ -22,7 +22,6 @@ Partial Class Subjectlist
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.LoadTable = New System.Windows.Forms.Button()
         Me.SeatingButt = New System.Windows.Forms.Button()
         Me.Addbutt = New System.Windows.Forms.Button()
         Me.DeleteButt = New System.Windows.Forms.Button()
@@ -31,18 +30,9 @@ Partial Class Subjectlist
         Me.ClassTables = New System.Windows.Forms.TabControl()
         Me.SuspendLayout()
         '
-        'LoadTable
-        '
-        Me.LoadTable.Location = New System.Drawing.Point(120, 279)
-        Me.LoadTable.Name = "LoadTable"
-        Me.LoadTable.Size = New System.Drawing.Size(75, 23)
-        Me.LoadTable.TabIndex = 1
-        Me.LoadTable.Text = "Load Table"
-        Me.LoadTable.UseVisualStyleBackColor = True
-        '
         'SeatingButt
         '
-        Me.SeatingButt.Location = New System.Drawing.Point(211, 279)
+        Me.SeatingButt.Location = New System.Drawing.Point(187, 279)
         Me.SeatingButt.Name = "SeatingButt"
         Me.SeatingButt.Size = New System.Drawing.Size(75, 23)
         Me.SeatingButt.TabIndex = 2
@@ -51,7 +41,7 @@ Partial Class Subjectlist
         '
         'Addbutt
         '
-        Me.Addbutt.Location = New System.Drawing.Point(39, 281)
+        Me.Addbutt.Location = New System.Drawing.Point(106, 281)
         Me.Addbutt.Name = "Addbutt"
         Me.Addbutt.Size = New System.Drawing.Size(75, 23)
         Me.Addbutt.TabIndex = 3
@@ -60,7 +50,7 @@ Partial Class Subjectlist
         '
         'DeleteButt
         '
-        Me.DeleteButt.Location = New System.Drawing.Point(84, 252)
+        Me.DeleteButt.Location = New System.Drawing.Point(152, 252)
         Me.DeleteButt.Name = "DeleteButt"
         Me.DeleteButt.Size = New System.Drawing.Size(75, 23)
         Me.DeleteButt.TabIndex = 4
@@ -69,7 +59,7 @@ Partial Class Subjectlist
         '
         'UpdateButt
         '
-        Me.UpdateButt.Location = New System.Drawing.Point(239, 250)
+        Me.UpdateButt.Location = New System.Drawing.Point(233, 252)
         Me.UpdateButt.Name = "UpdateButt"
         Me.UpdateButt.Size = New System.Drawing.Size(75, 23)
         Me.UpdateButt.TabIndex = 5
@@ -78,7 +68,7 @@ Partial Class Subjectlist
         '
         'EditButt
         '
-        Me.EditButt.Location = New System.Drawing.Point(297, 279)
+        Me.EditButt.Location = New System.Drawing.Point(268, 279)
         Me.EditButt.Name = "EditButt"
         Me.EditButt.Size = New System.Drawing.Size(75, 23)
         Me.EditButt.TabIndex = 6
@@ -104,13 +94,11 @@ Partial Class Subjectlist
         Me.Controls.Add(Me.DeleteButt)
         Me.Controls.Add(Me.Addbutt)
         Me.Controls.Add(Me.SeatingButt)
-        Me.Controls.Add(Me.LoadTable)
         Me.Name = "Subjectlist"
         Me.Text = "Subjectlist"
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents LoadTable As System.Windows.Forms.Button
     Friend WithEvents SeatingButt As System.Windows.Forms.Button
     Friend WithEvents Addbutt As System.Windows.Forms.Button
     Friend WithEvents DeleteButt As System.Windows.Forms.Button
