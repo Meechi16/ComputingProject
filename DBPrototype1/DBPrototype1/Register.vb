@@ -50,5 +50,9 @@ Public Class Register
 
     End Sub
 
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Backbutton.Click
+        Form1.Show()
+        Me.Close()
+    End Sub
 End Class
 

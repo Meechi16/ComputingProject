@@ -34,6 +34,7 @@ Partial Class Form1
         '
         'LoginButton
         '
+        Me.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LoginButton.Location = New System.Drawing.Point(22, 237)
         Me.LoginButton.Name = "LoginButton"
         Me.LoginButton.Size = New System.Drawing.Size(75, 23)
@@ -43,6 +44,7 @@ Partial Class Form1
         '
         'CancelButtons
         '
+        Me.CancelButtons.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CancelButtons.Location = New System.Drawing.Point(146, 237)
         Me.CancelButtons.Name = "CancelButtons"
         Me.CancelButtons.Size = New System.Drawing.Size(75, 23)
@@ -52,6 +54,7 @@ Partial Class Form1
         '
         'RegisterButton
         '
+        Me.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RegisterButton.Location = New System.Drawing.Point(270, 237)
         Me.RegisterButton.Name = "RegisterButton"
         Me.RegisterButton.Size = New System.Drawing.Size(75, 23)
@@ -94,9 +97,11 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(153, 23)
+        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(123, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(36, 13)
+        Me.Label3.Size = New System.Drawing.Size(111, 37)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Login "
         '
@@ -104,6 +109,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(376, 297)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)

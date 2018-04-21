@@ -1,8 +1,8 @@
 ﻿
 Imports System.IO
-Imports System.Data.OleDb
+Imports System.Data.OleDb ' used for the establishing a connection 
 Imports System.Text
-Imports System.Security.Cryptography
+Imports System.Security.Cryptography ' used for encryption 
 
 Public Class Utils
 
@@ -17,7 +17,7 @@ Public Class Utils
         Dim cmd As OleDbCommand = New OleDbCommand(query, myconnection) ' running the sql query against the file its connected to 
         Dim reader As OleDbDataReader = cmd.ExecuteReader
 
-        Dim dictionaryArray As New List(Of Dictionary(Of String, String))
+        Dim dictionaryArray As New List(Of Dictionary(Of String, String)) ' stores the data form the database into a dictionary 
         While reader.Read
             Dim dict As New Dictionary(Of String, String)
             Dim vals(reader.FieldCount - 1) As String
@@ -42,7 +42,7 @@ Public Class Utils
         myconnection.ConnectionString = connectstring ' establishing the connection string 
         myconnection.Open() ' open connection
 
-        Dim command = "INSERT INTO Login ([User], [Password], [Firstname], [Surname], [Subject], [TeacherID]) Values ("
+        Dim command = "INSERT INTO Login ([User], [Password], [Firstname], [Surname], [Subject], [TeacherID]) Values (" ' sql inserts the data into each table 
         For Each value In values
             command = command & "'" & value & "', "
         Next
@@ -71,7 +71,7 @@ Public Class Utils
         Return hashedString ' returns the password to the database 
 
     End Function
-    Function CreateTeacherId()
+    Function CreateTeacherId() '  creates a random 3 letter string to be used as the teacher id 
         Dim s As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         Dim r As New Random
         Dim TeacherId As New StringBuilder

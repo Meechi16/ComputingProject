@@ -46,5 +46,10 @@ Public Class Table
         Me.student1 = ""
         Return width & height & student1
     End Function
-
+    Public Function rotatetables()
+        Dim t As Integer = width
+        width = height
+        height = t
+        Return width & height
+    End Function
 End Class

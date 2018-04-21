@@ -11,6 +11,7 @@ Public Class SeatingPlan
     Dim isRunning As Boolean = True
     Dim tables As New List(Of Table)
     Dim lastTableClickedOn As Table
+    Dim tableDragging As Table
     Dim Utils As New Utils
     Dim TeacherID As String
     Dim ClassID As String
@@ -71,7 +72,9 @@ Public Class SeatingPlan
         G = Graphics.FromImage(BB) ' makes the things we have drawn equal to the grid 
 
         r = New Rectangle(0, 0, 480, 480) ' makes each square size 32 by 32 pixles 
-        G.FillRectangle(Brushes.Bisque, r) ' draws it to the form 
+        G.FillRectangle(Brushes.DarkSlateGray, r) ' draws it to the form 
+
+        putTableOnMouse(tableDragging) 'Move the table thats currently being dragged to the mouse
 
         For Each Table As Table In tables
             Dim rectangle As Rectangle ' draw the shape 
@@ -95,24 +98,28 @@ Public Class SeatingPlan
 
     Sub picturemousemove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove ' moves the picture
 
-        ' stops a table that is earlier in the arry being clicked on form taking over in the event that a table that have been overlapped, 
-        If MouseButtons = Windows.Forms.MouseButtons.Left And isClickedOn(lastTableClickedOn) Then ' looks whether the mouse button is clicked on and looks at if its on the last table thats been clicked on 
-            putTableOnMouse(lastTableClickedOn) ' sets position of the table to mouse position 
-            Exit Sub
-        End If
+        '' stops a table that is earlier in the arry being clicked on form taking over in the event that a table that have been overlapped, 
+        'If MouseButtons = Windows.Forms.MouseButtons.Left And isClickedOn(lastTableClickedOn) Then ' looks whether the mouse button is clicked on and looks at if its on the last table thats been clicked on 
+        '    putTableOnMouse(lastTableClickedOn) ' sets position of the table to mouse position 
+        '    Exit Sub
+        'End If
 
-        For Each Table As Table In tables
+        'For Each Table As Table In tables
 
-            If MouseButtons = Windows.Forms.MouseButtons.Left And isClickedOn(Table) Then
-                putTableOnMouse(Table)
-                lastTableClickedOn = Table
-                Exit For ' that stops multiple tables sticking ot mouse pointer 
-            End If
+        '    If MouseButtons = Windows.Forms.MouseButtons.Left And isClickedOn(Table) Then
+        '       putTableOnMouse(Table)
+        '        lastTableClickedOn = Table
+        '        Exit For ' that stops multiple tables sticking ot mouse pointer 
+        '    End If
 
-        Next
+        'Next
     End Sub
 
     Sub putTableOnMouse(ByRef table As Table)
+        If IsNothing(table) Then
+            Return
+        End If
+
         Dim reletiveMousePos = Me.PointToClient(Control.MousePosition)
         reletiveMousePos.X -= table.getWidth / 2
         reletiveMousePos.Y -= table.getHeight / 2
@@ -148,6 +155,52 @@ Public Class SeatingPlan
         '    e.Cancel = True
         'End If
     End Sub
+
+    Private Sub SeatingPlan_MouseDown(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
+        Dim tableclickedon As Boolean = False
+        For Each Table As Table In tables
+            If isClickedOn(Table) Then
+                tableclickedon = True
+                lastTableClickedOn = Table
+
+            End If
+        Next
+        If Not tableclickedon Then
+            Return
+        End If
+
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+            lastTableClickedOn.rotatetables()
+        ElseIf e.Button = Windows.Forms.MouseButtons.Left Then
+            tableDragging = lastTableClickedOn
+        End If
+    End Sub
+
+    Private Sub SeatingPlan_MouseUp(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseUp
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            tableDragging = Nothing
+        End If
+    End Sub
+    Private Sub OrderByGender()
+        Dim utils As New Utils
+        Dim orderM = utils.QueryDatabase("select Firstname from studentinfo where Gender = 'M'")
+        Dim orderF = utils.QueryDatabase("select firstname from studentinfo where gendfer = 'F'")
+        Dim gender As New List(Of Dictionary(Of String, String))
+
+        Dim pointerM As Integer = 0
+        Dim pointerF As Integer = 0
+        For i = 0 To orderF.Count + orderM.Count - 1
+            If i Mod 2 = 0 Then
+                gender.Add(orderM(pointerM))
+                pointerM += 1
+            Else
+                gender.Add(orderF(pointerF))
+                pointerM += 1
+            End If
+
+        Next
+    End Sub
+
 End Class
 
 

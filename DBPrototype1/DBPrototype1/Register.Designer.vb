@@ -23,7 +23,7 @@ Partial Class Register
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Backbutton = New System.Windows.Forms.Button()
         Me.Firstnametb = New System.Windows.Forms.TextBox()
         Me.Lastnametb = New System.Windows.Forms.TextBox()
         Me.UserNametb = New System.Windows.Forms.TextBox()
@@ -47,14 +47,14 @@ Partial Class Register
         Me.Button1.Text = "Enter"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
+        'Backbutton
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 12)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Back"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Backbutton.Location = New System.Drawing.Point(12, 12)
+        Me.Backbutton.Name = "Backbutton"
+        Me.Backbutton.Size = New System.Drawing.Size(75, 23)
+        Me.Backbutton.TabIndex = 1
+        Me.Backbutton.Text = "Back"
+        Me.Backbutton.UseVisualStyleBackColor = True
         '
         'Firstnametb
         '
@@ -171,16 +171,16 @@ Partial Class Register
         Me.Controls.Add(Me.UserNametb)
         Me.Controls.Add(Me.Lastnametb)
         Me.Controls.Add(Me.Firstnametb)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Backbutton)
         Me.Controls.Add(Me.Button1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Register"
-        Me.Text = "Register"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Backbutton As System.Windows.Forms.Button
     Friend WithEvents Firstnametb As System.Windows.Forms.TextBox
     Friend WithEvents Lastnametb As System.Windows.Forms.TextBox
     Friend WithEvents UserNametb As System.Windows.Forms.TextBox
