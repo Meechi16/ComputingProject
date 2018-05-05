@@ -25,55 +25,39 @@ Partial Class Subjectlist
         Me.SeatingButt = New System.Windows.Forms.Button()
         Me.Addbutt = New System.Windows.Forms.Button()
         Me.DeleteButt = New System.Windows.Forms.Button()
-        Me.UpdateButt = New System.Windows.Forms.Button()
-        Me.EditButt = New System.Windows.Forms.Button()
         Me.ClassTables = New System.Windows.Forms.TabControl()
+        Me.ChangeGrades = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'SeatingButt
         '
-        Me.SeatingButt.Location = New System.Drawing.Point(187, 279)
+        Me.SeatingButt.BackColor = System.Drawing.Color.MintCream
+        Me.SeatingButt.Location = New System.Drawing.Point(365, 281)
         Me.SeatingButt.Name = "SeatingButt"
         Me.SeatingButt.Size = New System.Drawing.Size(75, 23)
         Me.SeatingButt.TabIndex = 2
         Me.SeatingButt.Text = "Seating Plan"
-        Me.SeatingButt.UseVisualStyleBackColor = True
+        Me.SeatingButt.UseVisualStyleBackColor = False
         '
         'Addbutt
         '
-        Me.Addbutt.Location = New System.Drawing.Point(106, 281)
+        Me.Addbutt.BackColor = System.Drawing.Color.MintCream
+        Me.Addbutt.Location = New System.Drawing.Point(56, 252)
         Me.Addbutt.Name = "Addbutt"
         Me.Addbutt.Size = New System.Drawing.Size(75, 23)
         Me.Addbutt.TabIndex = 3
         Me.Addbutt.Text = "Add"
-        Me.Addbutt.UseVisualStyleBackColor = True
+        Me.Addbutt.UseVisualStyleBackColor = False
         '
         'DeleteButt
         '
-        Me.DeleteButt.Location = New System.Drawing.Point(152, 252)
+        Me.DeleteButt.BackColor = System.Drawing.Color.MintCream
+        Me.DeleteButt.Location = New System.Drawing.Point(170, 252)
         Me.DeleteButt.Name = "DeleteButt"
         Me.DeleteButt.Size = New System.Drawing.Size(75, 23)
         Me.DeleteButt.TabIndex = 4
         Me.DeleteButt.Text = "Delete"
-        Me.DeleteButt.UseVisualStyleBackColor = True
-        '
-        'UpdateButt
-        '
-        Me.UpdateButt.Location = New System.Drawing.Point(233, 252)
-        Me.UpdateButt.Name = "UpdateButt"
-        Me.UpdateButt.Size = New System.Drawing.Size(75, 23)
-        Me.UpdateButt.TabIndex = 5
-        Me.UpdateButt.Text = "Update"
-        Me.UpdateButt.UseVisualStyleBackColor = True
-        '
-        'EditButt
-        '
-        Me.EditButt.Location = New System.Drawing.Point(268, 279)
-        Me.EditButt.Name = "EditButt"
-        Me.EditButt.Size = New System.Drawing.Size(75, 23)
-        Me.EditButt.TabIndex = 6
-        Me.EditButt.Text = "Edit"
-        Me.EditButt.UseVisualStyleBackColor = True
+        Me.DeleteButt.UseVisualStyleBackColor = False
         '
         'ClassTables
         '
@@ -83,26 +67,35 @@ Partial Class Subjectlist
         Me.ClassTables.Size = New System.Drawing.Size(411, 216)
         Me.ClassTables.TabIndex = 7
         '
+        'ChangeGrades
+        '
+        Me.ChangeGrades.BackColor = System.Drawing.Color.MintCream
+        Me.ChangeGrades.Location = New System.Drawing.Point(282, 252)
+        Me.ChangeGrades.Name = "ChangeGrades"
+        Me.ChangeGrades.Size = New System.Drawing.Size(75, 23)
+        Me.ChangeGrades.TabIndex = 8
+        Me.ChangeGrades.Text = "Grades"
+        Me.ChangeGrades.UseVisualStyleBackColor = False
+        '
         'Subjectlist
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.MediumTurquoise
         Me.ClientSize = New System.Drawing.Size(482, 316)
+        Me.Controls.Add(Me.ChangeGrades)
         Me.Controls.Add(Me.ClassTables)
-        Me.Controls.Add(Me.EditButt)
-        Me.Controls.Add(Me.UpdateButt)
         Me.Controls.Add(Me.DeleteButt)
         Me.Controls.Add(Me.Addbutt)
         Me.Controls.Add(Me.SeatingButt)
         Me.Name = "Subjectlist"
-        Me.Text = "Subjectlist"
+        Me.Text = "`"
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents SeatingButt As System.Windows.Forms.Button
     Friend WithEvents Addbutt As System.Windows.Forms.Button
     Friend WithEvents DeleteButt As System.Windows.Forms.Button
-    Friend WithEvents UpdateButt As System.Windows.Forms.Button
-    Friend WithEvents EditButt As System.Windows.Forms.Button
     Friend WithEvents ClassTables As System.Windows.Forms.TabControl
+    Friend WithEvents ChangeGrades As System.Windows.Forms.Button
 End Class

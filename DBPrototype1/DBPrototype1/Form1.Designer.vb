@@ -34,33 +34,36 @@ Partial Class Form1
         '
         'LoginButton
         '
+        Me.LoginButton.BackColor = System.Drawing.Color.MintCream
         Me.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LoginButton.Location = New System.Drawing.Point(22, 237)
         Me.LoginButton.Name = "LoginButton"
         Me.LoginButton.Size = New System.Drawing.Size(75, 23)
         Me.LoginButton.TabIndex = 0
         Me.LoginButton.Text = "Login"
-        Me.LoginButton.UseVisualStyleBackColor = True
+        Me.LoginButton.UseVisualStyleBackColor = False
         '
         'CancelButtons
         '
+        Me.CancelButtons.BackColor = System.Drawing.Color.MintCream
         Me.CancelButtons.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CancelButtons.Location = New System.Drawing.Point(146, 237)
         Me.CancelButtons.Name = "CancelButtons"
         Me.CancelButtons.Size = New System.Drawing.Size(75, 23)
         Me.CancelButtons.TabIndex = 2
         Me.CancelButtons.Text = "Cancel"
-        Me.CancelButtons.UseVisualStyleBackColor = True
+        Me.CancelButtons.UseVisualStyleBackColor = False
         '
         'RegisterButton
         '
+        Me.RegisterButton.BackColor = System.Drawing.Color.MintCream
         Me.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RegisterButton.Location = New System.Drawing.Point(270, 237)
         Me.RegisterButton.Name = "RegisterButton"
         Me.RegisterButton.Size = New System.Drawing.Size(75, 23)
         Me.RegisterButton.TabIndex = 3
         Me.RegisterButton.Text = "Sign up"
-        Me.RegisterButton.UseVisualStyleBackColor = True
+        Me.RegisterButton.UseVisualStyleBackColor = False
         '
         'username
         '
@@ -109,7 +112,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.MediumTurquoise
         Me.ClientSize = New System.Drawing.Size(376, 297)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -120,7 +123,7 @@ Partial Class Form1
         Me.Controls.Add(Me.CancelButtons)
         Me.Controls.Add(Me.LoginButton)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "LoginForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

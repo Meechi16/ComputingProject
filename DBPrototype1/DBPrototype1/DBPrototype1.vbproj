@@ -79,6 +79,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GradeChanger.Designer.vb">
+      <DependentUpon>GradeChanger.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GradeChanger.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -94,6 +100,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PreeSeating Plan.Designer.vb">
+      <DependentUpon>PreeSeating Plan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PreeSeating Plan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Register.Designer.vb">
       <DependentUpon>Register.vb</DependentUpon>
     </Compile>
@@ -106,12 +118,6 @@
     <Compile Include="SeatingPlan.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sets.Designer.vb">
-      <DependentUpon>Sets.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Sets.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Subjectlist.Designer.vb">
       <DependentUpon>Subjectlist.vb</DependentUpon>
     </Compile>
@@ -119,10 +125,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Table.vb" />
-    <Compile Include="TeacherSets.Designer.vb">
-      <DependentUpon>TeacherSets.vb</DependentUpon>
+    <Compile Include="AddStudent.Designer.vb">
+      <DependentUpon>AddStudent.vb</DependentUpon>
     </Compile>
-    <Compile Include="TeacherSets.vb">
+    <Compile Include="AddStudent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Utils.vb" />
@@ -131,11 +137,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GradeChanger.resx">
+      <DependentUpon>GradeChanger.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreeSeating Plan.resx">
+      <DependentUpon>PreeSeating Plan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.vb</DependentUpon>
@@ -146,8 +158,8 @@
     <EmbeddedResource Include="Subjectlist.resx">
       <DependentUpon>Subjectlist.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherSets.resx">
-      <DependentUpon>TeacherSets.vb</DependentUpon>
+    <EmbeddedResource Include="AddStudent.resx">
+      <DependentUpon>AddStudent.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

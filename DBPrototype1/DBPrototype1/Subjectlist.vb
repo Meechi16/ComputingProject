@@ -2,13 +2,12 @@
 Public Class Subjectlist
     Dim Utils As Utils ' allows this class to be used in this class 
     Dim SDA As New OleDbDataAdapter ' helps fill the database 
-
     Dim Username As String ' declares the username 
     Dim GivenName As String ' declares the given name 
     Dim TeacherID As String ' declares the teacher id 
 
     Public Sub PassUserName(ByVal u As String)
-        Username = u
+        Username = u ' passes the user name from the login form 
     End Sub
 
 
@@ -59,9 +58,15 @@ Public Class Subjectlist
     End Sub
 
     Private Sub SeatingButt_Click(sender As System.Object, e As System.EventArgs) Handles SeatingButt.Click
-        Dim ClassID As String = Me.ClassTables.SelectedTab.Text ' uses the tab selected 
-        SeatingPlan.SetClassID(ClassID) ' takes the class id from it and searches the names of the students associated with classid 
-        SeatingPlan.Show() ' shows the class id 
+        PreeSeatingPlan.Show()
     End Sub
 
+    Private Sub Addbutt_Click(sender As System.Object, e As System.EventArgs) Handles Addbutt.Click
+        AddStudent.Show()
+    End Sub
+
+    Private Sub ChangeGrades_Click(sender As System.Object, e As System.EventArgs) Handles ChangeGrades.Click
+        GradeChanger.setClassId(Me.ClassTables.SelectedTab.Text)
+        GradeChanger.Show()
+    End Sub
 End Class

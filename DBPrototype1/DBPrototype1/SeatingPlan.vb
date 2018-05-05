@@ -41,7 +41,9 @@ Public Class SeatingPlan
     Private Sub setSeats()
         Dim utils As Utils = New Utils
 
-        Dim results_dictionary = utils.QueryDatabase("SELECT Firstname, LastName FROM TakenClass INNER JOIN StudentInfo ON TakenClass.StudentID = StudentInfo.StudentID WHERE TakenClass.ClassID = '" & ClassID & "'")
+        'Dim results_dictionary = utils.QueryDatabase("SELECT Firstname, LastName FROM TakenClass INNER JOIN StudentInfo ON TakenClass.StudentID = StudentInfo.StudentID WHERE TakenClass.ClassID = '" & ClassID & "'")
+
+        Dim results_dictionary = OrderByGender()
         Dim count As Integer = 0
         For y = 0 To 4
             For x = 0 To 3
@@ -150,10 +152,7 @@ Public Class SeatingPlan
 
     Private Sub frmProgramma_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         isRunning = False
-        'If MessageBox.Show("Are you sur to close this applicati?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-        'Else
-        '    e.Cancel = True
-        'End If
+       
     End Sub
 
     Private Sub SeatingPlan_MouseDown(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
@@ -181,26 +180,48 @@ Public Class SeatingPlan
             tableDragging = Nothing
         End If
     End Sub
-    Private Sub OrderByGender()
+    Private Function OrderByGender() As List(Of Dictionary(Of String, String))
         Dim utils As New Utils
-        Dim orderM = utils.QueryDatabase("select Firstname from studentinfo where Gender = 'M'")
-        Dim orderF = utils.QueryDatabase("select firstname from studentinfo where gendfer = 'F'")
+        Dim orderM = utils.QueryDatabase("SELECT Firstname FROM TakenClass INNER JOIN StudentInfo ON TakenClass.StudentID = StudentInfo.StudentID WHERE TakenClass.ClassID = '" & ClassID & "' AND Gender = 'M'")
+        Dim orderF = utils.QueryDatabase("SELECT Firstname FROM TakenClass INNER JOIN StudentInfo ON TakenClass.StudentID = StudentInfo.StudentID WHERE TakenClass.ClassID = '" & ClassID & "' AND Gender = 'F'")
         Dim gender As New List(Of Dictionary(Of String, String))
-
+        Dim count As Integer = 0
         Dim pointerM As Integer = 0
         Dim pointerF As Integer = 0
-        For i = 0 To orderF.Count + orderM.Count - 1
+
+        Dim MoreFemales As Boolean = orderF.Count > orderM.Count
+
+        Dim MixCount = 0
+        If MoreFemales Then
+            MixCount = orderM.Count
+        Else
+            MixCount = orderF.Count
+        End If
+
+
+        For i = 0 To MixCount * 2 - 1
             If i Mod 2 = 0 Then
+                gender.Add(orderF(pointerF))
+                pointerF += 1
+            Else
                 gender.Add(orderM(pointerM))
                 pointerM += 1
-            Else
-                gender.Add(orderF(pointerF))
-                pointerM += 1
             End If
-
         Next
-    End Sub
 
+        If MoreFemales Then
+            For i = pointerF To orderF.Count - 1
+                gender.Add(orderF(i))
+
+            Next
+        Else : For i = pointerM To orderM.Count - 1
+
+            Next
+        End If
+
+        Return gender
+    End Function
+    
 End Class
 
 

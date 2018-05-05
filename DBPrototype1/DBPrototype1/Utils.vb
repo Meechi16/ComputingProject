@@ -81,4 +81,34 @@ Public Class Utils
         Next
         Return TeacherId.ToString()
     End Function
+    Sub AddToLoginTableForSudents(ParamArray values() As String)
+        Dim provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data source="
+        Dim datafile = "login form.accdb"
+        Dim connectstring = provider & datafile ' telling the program wich file to look in
+        Dim myconnection = New OleDbConnection
+        myconnection.ConnectionString = connectstring ' establishing the connection string 
+        myconnection.Open() ' open connection
+
+        Dim command = "INSERT INTO StudentInfo ([StudentID], [Firstname], [LastName], [Age], [Gender], [ParentContact_no]) Values (" ' sql inserts the data into each table 
+        For Each value In values
+            command = command & "'" & value & "', "
+        Next
+        command = Left(command, command.Length - 2)
+        command = command & ");"
+
+        Dim cmd As OleDbCommand = New OleDbCommand(command, myconnection) ' running the sql query against the file its connected to 
+        cmd.ExecuteNonQuery()
+        cmd.Dispose()
+        myconnection.Close()
+    End Sub
+    Function CreateStudentinteger() '  creates a random 3 letter string to be used as the teacher id 
+        Dim s As String = "0123456789"
+        Dim r As New Random
+        Dim studentinteger As New StringBuilder
+        For i As Integer = 1 To 2
+            Dim idx As Integer = r.Next(0, 10)
+            studentinteger.Append(s.Substring(idx, 1))
+        Next
+        Return studentinteger.ToString()
+    End Function
 End Class
